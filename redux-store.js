@@ -56,3 +56,5 @@ const accounting = (totalMoney = 100, action) => {
         return totalMoney;
     }
 }
+
+console.log(Redux);

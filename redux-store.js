@@ -1,7 +1,7 @@
 // Action Creators
 
 const newBooking = (name, amount) => {
-    return {
+    return {                        //action
         type: "NEW_BOOKING",
         payload: {
             name,
@@ -11,7 +11,7 @@ const newBooking = (name, amount) => {
 }
 
 const cancelBooking = (name, refundAmount) => {
-    return {
+    return {                        //action
         type: "CANCEL_BOOKING",
         payload: {
             name,
@@ -21,7 +21,7 @@ const cancelBooking = (name, refundAmount) => {
 }
 
 // Reducers
-
+// Here we create three reducers for booking our ticket...
 const reservationHistory = (oldreservationList = [], action) => {
     if (action.type === "NEW_BOOKING") {
         return [...oldreservationList, action.payload];
@@ -44,6 +44,7 @@ const cancellationHistory = (oldcancellationList = [], action) => {
         return oldcancellationList;
     }
 }
+
 const accounting = (totalMoney = 100, action) => {
     if (action.type === "NEW_BOOKING") {
         return totalMoney + action.payload.amount; // we have to pay initially some amount

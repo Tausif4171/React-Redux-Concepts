@@ -48,10 +48,10 @@ const cancellationHistory = (oldcancellationList = [], action) => {
 // 3
 const accounting = (totalMoney = 100, action) => {
     if (action.type === "NEW_BOOKING") {
-        return totalMoney + action.payload.amount;
+        return totalMoney + action.payload.amount; // 100+30 = 130 like that
     }
     else if (action.type === "CANCEL_BOOKING") {
-        return totalMoney - action.payload.refundAmount;
+        return totalMoney - action.payload.refundAmount; // 130-30 = 100 like that
     }
     else {
         return totalMoney;
